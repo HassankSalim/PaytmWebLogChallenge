@@ -1,0 +1,13 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /home/hasali/personal/PaytmWebLogChallenge/data/test.log
+
+filebeat.config.modules:
+  path: /opt/modules.d/*.yml
+  reload.enabled: false
+
+
+output.logstash:
+  hosts: ["localhost:5044"]
