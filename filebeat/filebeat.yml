@@ -2,7 +2,7 @@ filebeat.inputs:
 - type: log
   enabled: true
   paths:
-    - /home/hasali/personal/PaytmWebLogChallenge/data/test.log
+    - data/test.log
 
 filebeat.config.modules:
   path: /opt/modules.d/*.yml
