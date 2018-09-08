@@ -1,0 +1,123 @@
+{
+    "index_patterns": [
+        "paytm_log-*"
+    ],
+    "mappings": {
+        "doc": {
+            "properties": {
+                "target": {
+                    "type": "ip"
+                },
+                "client": {
+                    "type": "ip"
+                },
+                "target_processing_time": {
+                    "type": "float"
+                },
+                "response_processing_time": {
+                    "type": "float"
+                },
+                "request_processing_time": {
+                    "type": "float"
+                },
+                "target_port": {
+                    "type": "integer"
+                },
+                "target_status_code": {
+                    "type": "integer"
+                },
+                "http_port": {
+                    "type": "integer"
+                },
+                "client_port": {
+                    "type": "integer"
+                },
+                "sent_bytes": {
+                    "type": "integer"
+                },
+                "elb_status_code": {
+                    "type": "integer"
+                },
+                "received_bytes": {
+                    "type": "integer"
+                },
+                "user_agent_exists": {
+                    "type": "boolean"
+                },
+                "@timestamp": {
+                    "type": "date"
+                },
+                "log_timestamp": {
+                    "type": "date"
+                },
+                "ssl_cipher": {
+                    "type": "keyword"
+                },
+                "domain": {
+                    "type": "keyword"
+                },
+                "alb-name": {
+                    "type": "keyword"
+                },
+                "request_uri": {
+                    "type": "keyword"
+                },
+                "user_agent": {
+                    "type": "keyword"
+                },
+                "http_version": {
+                    "type": "keyword"
+                },
+                "http_method": {
+                    "type": "keyword"
+                },
+                "protocol": {
+                    "type": "keyword"
+                },
+                "ssl_protocol": {
+                    "type": "keyword"
+                },
+                "geoip": {
+                    "dynamic": true,
+                    "properties": {
+                        "ip": {
+                            "type": "ip"
+                        },
+                        "location": {
+                            "type": "geo_point"
+                        },
+                        "latitude": {
+                            "type": "half_float"
+                        },
+                        "longitude": {
+                            "type": "half_float"
+                        },
+                        "city_name": {
+                            "type": "keyword"
+                        },
+                        "region_name": {
+                            "type": "keyword"
+                        }
+                    }
+                },
+                "agent_details": {
+                    "dynamic": true,
+                    "properties": {
+                        "device": {
+                            "type": "keyword"
+                        },
+                        "os_name": {
+                            "type": "keyword"
+                        },
+                        "os": {
+                            "type": "keyword"
+                        },
+                        "name": {
+                            "type": "keyword"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
