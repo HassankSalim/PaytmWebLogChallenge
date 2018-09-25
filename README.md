@@ -10,6 +10,8 @@
  ### Start ETL Pipeline 
 
 ```bash 
+elasticsearch
+sudo service mongod start
 logstash -f logstash/logstash.conf
 filebeat -e -c filebeat/filebeat.conf
 ```
